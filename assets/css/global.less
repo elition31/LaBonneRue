@@ -1,0 +1,1130 @@
+// ======================================================================================== //
+// =============================== DECLARATION DES COULEURS =============================== //
+// ======================================================================================== //
+
+@bleu1: rgba(0, 132, 184, 1);
+
+@bleu2: rgba(0, 183, 255, 1);
+
+@gris1: rgba(85, 85, 85, 1);
+
+@gris2: rgba(51, 51, 51, 1);
+
+@gris3: rgba(210, 210, 210, 1);
+
+@gris4: rgba(40, 40, 40, 1);
+
+@vert1: rgba(6, 173, 34,1.0);
+
+@vert2: rgba(39, 174, 96,1.0);
+
+@vert3: rgba(46, 204, 113,1.0);
+
+@rouge1: rgba(231, 76, 60,1.0);
+
+@rouge2: rgba(192, 57, 43,1.0);
+
+@noir: rgba(0,0,0,1);
+
+@blanc: rgba(255, 255, 255, 1);
+
+@transparent: rgba(255, 255, 255, 0);
+
+// ======================================================================================== //
+// ===================================== TAG GLOBAUX ====================================== //
+// ======================================================================================== //
+body 
+{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;    
+}
+
+main 
+{
+	padding-top: 80px;
+}
+
+// ======================================================================================== //
+// =================================== CLASSES GLOBALES =================================== //
+// ======================================================================================== //
+
+.inactif
+{
+	 display: none;
+}
+
+.row 
+{
+    margin: 0px;
+}
+
+// ======================================================================================== //
+// ========================================= MENU ========================================= //
+// ======================================================================================== //
+
+#menu
+{
+    position: fixed;
+    background-color: @vert1;
+    width: 100%;
+    text-align: center;
+    box-shadow: 1px 1px 2px @noir;
+    opacity: 1.0;
+    z-index: 999;
+
+    #content-menu
+    {
+        .onglet 
+        {
+            padding: 5px 10px 5px 10px;
+            color: @vert1;
+            border-radius: 3px;
+            transition: background-color 0.7s, color 1s, box-shadow 0.8s, transform 0.4s;
+
+            &:hover
+            {
+                transform: scale(1.04);
+                background-color: @blanc;
+                color: @bleu1;
+                box-shadow: 1px 1px 2px @gris1;
+                cursor: pointer;
+            } // .onglet:hover
+
+            &:hover > a
+            {
+                color: @vert1;
+            } // .onglet:hover a
+
+            &:hover a > i 
+            {
+                color: @gris1;
+            } // .onglet:hover a > i
+
+            a 
+            {
+                text-decoration: none;
+                color: @blanc;
+                font-weight: bold;
+            } // a
+        } // .onglet
+    } // #content-menu
+} // menu
+
+// ======================================================================================== //
+// ======================================= SOUS_MENU ====================================== //
+// ======================================================================================== //
+
+.menu_compte
+{
+	display: block;
+	width: 100%;
+	text-align: center;
+	a 
+	{
+		margin: 0px 20px;
+		.sous_menu 
+		{
+			text-align: center;
+			display: inline-block;
+			background-color: @vert1;
+			color: @blanc;
+			padding: 10px;
+			border-radius: 3px;
+			font-weight: bolder;
+			transition: background-color 0.7s, color 1s, box-shadow 0.8s, transform 0.4s;
+			&:hover
+			{
+				background-color: @blanc;
+				color: @vert1;
+				box-shadow: 1px 1px 2px @gris1;
+				transform: scale(1.05);
+			} // .sous_menu:hover
+		} // .sous_menu
+	} // a
+} // .menu_compte
+
+// ======================================================================================== //
+// ===================================== ANNONCE INDEX ==================================== //
+// ======================================================================================== //
+
+.annonce_index
+{
+	section
+	{
+		margin-top: 30px;
+		box-shadow: 0px 0px 2px @noir;
+		background-color: @vert1;
+		.image
+		{
+			background-color: @blanc;
+			padding: 0px;
+			img 
+			{
+
+			} // img
+		} // .image
+
+		.infos 
+		{
+			.titre_annonce
+			{
+				.titre 
+				{
+
+				} // .titre
+
+				.auteur
+				{
+
+				} // .auteur
+			} // .titre_annonce
+
+			.description_annonce
+			{
+
+			} // .description_annonce
+
+			.details 
+			{
+				.type 
+				{
+
+				} // .type
+
+				.resultat
+				{
+
+				} // .resultat
+			} // .details 
+
+			.voir 
+			{
+				button 
+				{
+
+				} // button 
+			} // .voir 
+
+		} // .infos
+	} // section
+} // .annonce_index
+
+// ======================================================================================== //
+// ====================================== ADD ANNONCE  ==================================== //
+// ======================================================================================== //
+
+.formulaire
+{
+	div
+	{
+		label
+		{
+			span 
+			{
+
+			} // span
+		} // label
+
+		input
+		{
+
+		} // input
+
+		textarea 
+		{
+
+		} // textarea
+
+		select
+		{
+			option
+			{
+
+			} // option
+		} // select
+	} // div
+} // .formulaire
+
+// ======================================================================================== //
+// ======================================== ACCOUNT  ====================================== //
+// ======================================================================================== //
+
+.infos 
+{
+	h1
+	{
+
+	} // h1
+
+	h2
+	{
+
+	} // h2
+
+	div
+	{
+		margin-left: 20px;
+		span
+		{
+
+		} // span
+	} // div
+
+	form 
+	{
+		div
+		{
+			label
+			{
+				span
+				{
+
+				} // span
+			} // label
+
+			input
+			{
+				width: auto;
+			} // input
+		} // div
+
+		button 
+		{
+
+			&:hover
+			{
+
+			} // button:hover
+		} // button
+	} // form
+} // .infos
+
+
+@media (min-width: 1200px) 
+{
+	#menu
+    {
+        padding: 10px 10px 10px 10px;
+    
+        #content-menu
+        {
+            .onglet 
+            {
+                display: inline-block;
+                font-size: 22px;
+            } // .onglet
+        } // #content-menu
+
+        .show-menu 
+        {
+            display: none;
+        } // .show-menu
+    } // menu
+
+    .menu_compte
+	{
+		a 
+		{
+			.sous_menu 
+			{
+				
+				&:hover
+				{
+					
+				} // .sous_menu:hover
+			} // .sous_menu
+		} // a
+	} // .menu_compte
+
+	.annonce_index
+	{
+		padding: 30px;
+		section
+		{
+			.image
+			{
+				border-right: 4px solid @vert1;
+				img 
+				{
+	
+				} // img
+			} // .image
+	
+			.infos 
+			{
+				.titre_annonce
+				{
+					margin-bottom: 10px;
+					.titre 
+					{
+						
+					} // .titre
+	
+					.auteur
+					{
+	
+					} // .auteur
+				} // .titre_annonce
+	
+				.description_annonce
+				{
+					margin-bottom: 10px;
+				} // .description_annonce
+	
+				.details 
+				{
+					margin-bottom: 10px;
+					.type 
+					{
+	
+					} // .type
+	
+					.resultat
+					{
+	
+					} // .resultat
+				} // .details 
+	
+				.voir 
+				{
+					margin: 0px;
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					padding: 0;
+					button 
+					{
+	
+					} // button 
+				} // .voir 
+	
+			} // .infos
+		} // section
+	} // .annonce_index
+
+	.formulaire
+	{
+		padding: 100px;
+		form 
+		{
+			div
+			{
+				label
+				{
+					span 
+					{
+		
+					} // span
+				} // label
+		
+				input
+				{
+		
+				} // input
+		
+				textarea 
+				{
+		
+				} // textarea
+		
+				select
+				{
+					option
+					{
+		
+					} // option
+				} // select
+			} // div
+
+			button 
+			{
+
+				&:hover
+				{
+
+				} // button:hover
+			} // button
+		} // form
+	} // .formulaire
+
+	.infos 
+	{
+		h1
+		{
+	
+		} // h1
+	
+		h2
+		{
+	
+		} // h2
+	
+		div
+		{
+			span
+			{
+	
+			} // span
+		} // div
+	
+		form 
+		{
+			div
+			{
+				label
+				{
+					span
+					{
+	
+					} // span
+				} // label
+	
+				input
+				{
+	
+				} // input
+			} // div
+	
+			button 
+			{
+	
+				&:hover
+				{
+	
+				} // button:hover
+			} // button
+		} // form
+	} // .infos
+}
+
+@media (min-width: 992px) and (max-width: 1199px) 
+{
+    #menu
+    {
+        padding: 10px 10px 10px 10px;
+    
+        #content-menu
+        {
+            .onglet 
+            {
+                display: inline-block;
+                font-size: 20px;
+            } // .onglet
+        } // #content-menu
+
+        .show-menu 
+        {
+            display: none;
+        } // .show-menu
+    } // menu
+
+    .menu_compte
+	{
+		a 
+		{
+			.sous_menu 
+			{
+				
+				&:hover
+				{
+					
+				} // .sous_menu:hover
+			} // .sous_menu
+		} // a
+	} // .menu_compte
+
+	.annonce_index
+	{
+		padding: 30px;
+		section
+		{
+			.image
+			{
+				border-right: 4px solid @vert1;
+				img 
+				{
+	
+				} // img
+			} // .image
+	
+			.infos 
+			{
+				.titre_annonce
+				{
+					.titre 
+					{
+	
+					} // .titre
+	
+					.auteur
+					{
+	
+					} // .auteur
+				} // .titre_annonce
+	
+				.description_annonce
+				{
+	
+				} // .description_annonce
+	
+				.details 
+				{
+					.type 
+					{
+	
+					} // .type
+	
+					.resultat
+					{
+	
+					} // .resultat
+				} // .details 
+	
+				.voir 
+				{
+					margin: 0px;
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					padding: 0;
+					button 
+					{
+	
+					} // button 
+				} // .voir 
+	
+			} // .infos
+		} // section
+	} // .annonce_index
+
+	.formulaire
+	{
+		padding: 100px;
+		form 
+		{
+			div
+			{
+				label
+				{
+					span 
+					{
+		
+					} // span
+				} // label
+		
+				input
+				{
+		
+				} // input
+		
+				textarea 
+				{
+		
+				} // textarea
+		
+				select
+				{
+					option
+					{
+		
+					} // option
+				} // select
+			} // div
+
+			button 
+			{
+
+				&:hover
+				{
+
+				} // button:hover
+			} // button
+		} // form
+	} // .formulaire
+
+	.infos 
+	{
+		h1
+		{
+	
+		} // h1
+	
+		h2
+		{
+	
+		} // h2
+	
+		div
+		{
+			span
+			{
+	
+			} // span
+		} // div
+	
+		form 
+		{
+			div
+			{
+				label
+				{
+					span
+					{
+	
+					} // span
+				} // label
+	
+				input
+				{
+	
+				} // input
+			} // div
+	
+			button 
+			{
+	
+				&:hover
+				{
+	
+				} // button:hover
+			} // button
+		} // form
+	} // .infos
+}
+
+@media (min-width: 768px) and (max-width: 991px) 
+{
+    #menu
+    {
+        padding: 10px 0px 10px 0px;
+    
+        #content-menu
+        {
+            .onglet 
+            {
+                display: inline-block;
+                font-size: 16px;
+            } // .onglet
+        } // #content-menu
+
+        .show-menu 
+        {
+            display: none;
+        } // .show-menu
+    } // menu
+
+    .menu_compte
+	{
+		a 
+		{
+			.sous_menu 
+			{
+				
+				&:hover
+				{
+					
+				} // .sous_menu:hover
+			} // .sous_menu
+		} // a
+	} // .menu_compte
+
+	.annonce_index
+	{
+		padding: 30px;
+		section
+		{
+			.image
+			{
+				border-right: 4px solid @vert1;
+				img 
+				{
+	
+				} // img
+			} // .image
+	
+			.infos 
+			{
+				.titre_annonce
+				{
+					.titre 
+					{
+	
+					} // .titre
+	
+					.auteur
+					{
+	
+					} // .auteur
+				} // .titre_annonce
+	
+				.description_annonce
+				{
+	
+				} // .description_annonce
+	
+				.details 
+				{
+					.type 
+					{
+	
+					} // .type
+	
+					.resultat
+					{
+	
+					} // .resultat
+				} // .details 
+	
+				.voir 
+				{
+					margin: 0px;
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					padding: 0;
+					button 
+					{
+	
+					} // button 
+				} // .voir 
+	
+			} // .infos
+		} // section
+	} // .annonce_index
+
+	.formulaire
+	{
+		padding: 100px;
+		form 
+		{
+			div
+			{
+				label
+				{
+					span 
+					{
+		
+					} // span
+				} // label
+		
+				input
+				{
+		
+				} // input
+		
+				textarea 
+				{
+		
+				} // textarea
+		
+				select
+				{
+					option
+					{
+		
+					} // option
+				} // select
+			} // div
+
+			button 
+			{
+
+				&:hover
+				{
+
+				} // button:hover
+			} // button
+		} // form
+	} // .formulaire
+
+	.infos 
+	{
+		h1
+		{
+	
+		} // h1
+	
+		h2
+		{
+	
+		} // h2
+	
+		div
+		{
+			span
+			{
+	
+			} // span
+		} // div
+	
+		form 
+		{
+			div
+			{
+				label
+				{
+					span
+					{
+	
+					} // span
+				} // label
+	
+				input
+				{
+	
+				} // input
+			} // div
+	
+			button 
+			{
+	
+				&:hover
+				{
+	
+				} // button:hover
+			} // button
+		} // form
+	} // .infos
+}
+
+@media (max-width: 768px) 
+{
+	#menu
+    {
+        padding: 10px 0px 10px 0px;
+    
+        #content-menu
+        {
+            display: none;
+
+            .onglet 
+            {
+                display: block;
+                font-size: 16px;
+                text-align: left;
+
+                &:hover
+                {
+                    padding-left: 25px;
+                } // .onglet:hover
+    
+                &:hover > a
+                {
+                    padding-left: 20px;
+                } // .onglet:hover a
+    
+                a 
+                {
+                    display: block;
+                } // a
+            } // .onglet
+
+            .first 
+            {
+                margin-top: 12px;
+                border-top: 4px solid @blanc;
+            } // .first
+        } // #content-menu
+
+        .show-menu 
+        {
+            color: @blanc;
+            font-size: 23px;
+            text-align: left;
+            cursor: pointer;
+
+            .fa-bars
+            {
+                border: 2px solid @blanc;
+                border-radius: 4px;
+                padding: 2px 5px 2px 5px;
+                margin-left: 10px;
+                transition: background-color 0.8s, color 0.8s;
+
+                &:hover 
+                {
+                    cursor: pointer;
+                    background-color: @blanc;
+                    color: @bleu1;
+                } // .fa-bars:hover
+            } // .fa-bars
+
+            &:hover > .fa-bars
+            {
+                cursor: pointer;
+                background-color: @blanc;
+                color: @bleu1;
+            } // .show-menu:hover > .fa-bars
+        } // .show-menu
+    } // menu
+
+    .menu_compte
+	{
+		a 
+		{
+			.sous_menu 
+			{
+				
+				&:hover
+				{
+					
+				} // .sous_menu:hover
+			} // .sous_menu
+		} // a
+	} // .menu_compte
+
+	.annonce_index
+	{
+		padding: 30px;
+		section
+		{
+			border-bottom: 4px solid @vert1;
+
+			.image
+			{
+				border-bottom: 4px solid @vert1;
+				img 
+				{
+	
+				} // img
+			} // .image
+	
+			.infos 
+			{
+				.titre_annonce
+				{
+					.titre 
+					{
+	
+					} // .titre
+	
+					.auteur
+					{
+	
+					} // .auteur
+				} // .titre_annonce
+	
+				.description_annonce
+				{
+	
+				} // .description_annonce
+	
+				.details 
+				{
+					.type 
+					{
+	
+					} // .type
+	
+					.resultat
+					{
+	
+					} // .resultat
+				} // .details 
+	
+				.voir 
+				{
+					button 
+					{
+	
+					} // button 
+				} // .voir 
+	
+			} // .infos
+		} // section
+	} // .annonce_index
+
+	.formulaire
+	{
+		form 
+		{
+			div
+			{
+				label
+				{
+					span 
+					{
+		
+					} // span
+				} // label
+		
+				input
+				{
+		
+				} // input
+		
+				textarea 
+				{
+		
+				} // textarea
+		
+				select
+				{
+					option
+					{
+		
+					} // option
+				} // select
+			} // div
+
+			button 
+			{
+
+				&:hover
+				{
+
+				} // button:hover
+			} // button
+		} // form
+	} // .formulaire
+
+	.infos 
+	{
+		h1
+		{
+	
+		} // h1
+	
+		h2
+		{
+	
+		} // h2
+	
+		div
+		{
+			span
+			{
+	
+			} // span
+		} // div
+	
+		form 
+		{
+			div
+			{
+				label
+				{
+					span
+					{
+	
+					} // span
+				} // label
+	
+				input
+				{
+	
+				} // input
+			} // div
+	
+			button 
+			{
+	
+				&:hover
+				{
+	
+				} // button:hover
+			} // button
+		} // form
+	} // .infos
+}
