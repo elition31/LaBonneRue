@@ -1,56 +1,53 @@
-<?php 
+<?php
 session_start();
 require 'include/functions.php';
 require 'include/db.php';
 
-$requete = 0;
-if (!empty($_POST)) {
-	$errors = array();
+	if (!empty($_POST)) {
+		$errors = array();
 
-	$requete = 0;
-	if(!preg_match('/^[a-zA-Z0-9_ ]+$/', $_POST['item_title_search'])){
-		$errors['item_title_search'] = "Vous n'avez pas entrer un titre ou une description valide (Uniquement des lettres, des chiffres et l'underscore).";
+		if(!preg_match('/^($|[a-zA-Z0-9_ ]+$)/', $_POST['item_title_search'])){
+			$errors['item_title_search'] = "Vous n'avez pas entrer un titre ou une description valide (Uniquement des lettres, des chiffres et l'underscore).";
+		}
+		if(!preg_match('/^($|[a-zA-Z0-9_ ]+$)/', $_POST['item_description_search'])){
+			$errors['item_description_search'] = "Vous n'avez pas entrer un titre ou une description valide (Uniquement des lettres, des chiffres et l'underscore).";
+		}
+		if(empty($_POST['category']) || !preg_match('/^[0-9]+$/', $_POST['category'])){
+			$errors['category'] = "Vous n'avez pas sélectionné de catégorie";
+		}
+		if(empty($_POST['quality']) || !preg_match('/^[0-9]+$/', $_POST['quality'])){
+			$errors['quality'] = "Vous n'avez pas sélectionné de quality";
+		}
+		if(empty($errors)){
+
+			if(empty($_POST['item_title_search'])){$keywords = 0;}else {$keywords = 1;}
+
+			$title = $_POST['item_title_search'];
+			$description = $_POST['item_description_search'];
+			$category = (int)$_POST['category'];
+			$quality = (int)$_POST['quality'];
+
+				$Search = $pdo->query("
+				SELECT i.title, i.description, c.title AS category, i.picture AS picture, q.title AS quality, u.user_name AS owner
+				FROM items i
+				LEFT JOIN categories c ON i.category_id = c.id
+				LEFT JOIN qualities q ON i.quality_id = q.id
+				LEFT JOIN users u ON i.user_id = u.id
+				WHERE i.category_id = $category
+				AND i.quality_id = $quality
+				ORDER BY i.id");
+				if ($Search->rowCount() > 0) {
+					$_SESSION["flash"]["success"] = "Votre recherche a donné un ou plusieurs résultat !";
+				}else{
+					$_SESSION["flash"]["danger"] = "Votre recherche n'a donné aucun résultat";
+				}
+
+		}
 	}
-	if(empty($_POST['category']) || !preg_match('/^[0-9]+$/', $_POST['category'])){
-		$errors['category'] = "Vous n'avez pas sélectionné de catégorie";
-	}
-	if(empty($_POST['quality']) || !preg_match('/^[0-9]+$/', $_POST['quality'])){
-		$errors['quality'] = "Vous n'avez pas sélectionné de quality";
-	}
-	var_dump($requete);
-	die;
-	if(empty($errors)){
-		
-		if(empty($_POST['item_title_search'])){$keywords = 0;}else {$keywords = 1;}	
-
-		$title = $_POST['item_title_search'];
-		$description = $_POST['item_description_search'];
-		$category = $_POST['category'];
-		$quality = $_POST['quality'];
-		
-			$Search = $pdo->query("
-			SELECT i.title, i.description, c.title AS category, i.picture AS picture, q.title AS quality, u.user_name AS owner 
-			FROM items i 
-			LEFT JOIN categories c ON i.category_id = c.id 
-			LEFT JOIN qualities q ON i.quality_id = q.id 
-			LEFT JOIN users u ON i.user_id = u.id 
-			WHERE i.category_id = $category
-			AND i.quality_id = $quality
-			ORDER BY i.id");
-		var_dump($Search);
-		
-			$requete = 1;
-			die();
-		$_SESSION["flash"]["success"] = "Votre recherche a donné un ou plusieurs résultat !";
-
-		header("Location: find.php");
-
-		exit();
-	}
-}
-
 ?>
 <?php require 'include/header.php'; ?>
+
+
 
 <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12 recherche" style="padding-top: 80px;">
 	<form action="" method="POST" accept-charset="utf-8">
@@ -86,15 +83,15 @@ if (!empty($_POST)) {
 			</select>
 		<button type="submit">Trouver !</button>
 	</form>
-	
+
 </article>
 
 <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12 resultat_recherche">
 	<section class="col-xs-12 col-sm-12 col-md-4 col-lg-4 carte">
-		
+
 	</section>
 	<section class="col-xs-12 col-sm-12 col-md-8 col-lg-8 resultat">
-	<?php if($requete == 0) { ?>
+	<?php if(!empty($Search)) { ?>
 		<?php while ($data = $Search->fetch()) { ?>
 			<section class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 image">
@@ -116,7 +113,7 @@ if (!empty($_POST)) {
 				</div>
 			</section>
 			<?php }
-			$LastPost->closeCursor(); // Termine le traitement de la requête
+			$Search->closeCursor(); // Termine le traitement de la requête
 			?>
 		<?php } ?>
 	</section>

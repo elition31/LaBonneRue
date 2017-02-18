@@ -14,6 +14,7 @@ $db = [
 
 try {
     $pdo = new PDO('mysql:host=' . $db['host'] . ';dbname=' . $db['db'] . ';port=' . $db['port'], $db['username'], $db['password'] );
+    $pdo->query("SET CHARACTER SET 'utf8'");
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );

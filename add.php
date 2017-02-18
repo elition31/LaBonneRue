@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 require 'include/functions.php';
 require_once 'include/db.php';
@@ -19,7 +19,7 @@ if (!empty($_POST)) {
 	}
 	if(empty($_POST['quality']) || !preg_match('/^[0-9]+$/', $_POST['quality'])){
 		$errors['quality'] = "Vous n'avez pas sélectionné de quality";
-	}	
+	}
 	if(!empty($_POST['metro']) && !preg_match('/^[a-zA-Z0-9]+$/', $_POST['metro'])){
 		$errors['metro'] = "Les renseignements donnés dans le champ métro ne sont pas correct (Chiffre et lettre seulement).";
 	}
@@ -67,19 +67,20 @@ if (!empty($_POST)) {
 		$errors['picture'] = "Les dimensions de l'image dépassent 500x500";
 		$uploadOk = 0;
 	}
-	
-	    
-	
+
+
+
 
 	if(empty($errors) || $uploadOk == 1){
-		
+        $metro = empty($_POST['metro']) ? NULL : $_POST['metro'];
+
 		if(empty($_POST['metro'])){$metro = NULL;}else {$metro = $_POST['metro'];}
 		if(empty($_POST['bus'])){$bus = NULL;}else {$bus = $_POST['bus'];}
 		if(empty($_POST['tramway'])){$tram = NULL;}else {$tram = $_POST['tramway'];}
 		if(empty($_POST['longitude'])){$longitude = NULL;}else {$longitude = $_POST['longitude'];}
 		if(empty($_POST['latitude'])){$latitude = NULL;}else {$latitude = $_POST['latitude'];}
 		if(empty($_POST['address'])){$address = NULL;}else {$address = $_POST['address'];}
-		
+
 		(move_uploaded_file($_FILES["picture"]["tmp_name"], $file_name));
 
 		$picture = $file_name;
@@ -89,7 +90,7 @@ if (!empty($_POST)) {
 		$description = $_POST['description'];
 		$category = $_POST['category'];
 		$quality = $_POST['quality'];
-		
+
 
 		$req = $pdo->prepare("INSERT INTO items (title, description, category_id, user_id, picture, metro, bus, tram, quality_id, longitude, latitude, address, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 		$req->execute(array($title, $description, $category, $infos->id, $picture, $metro, $bus, $tram, $quality, $longitude, $latitude, $address, $date));
@@ -110,7 +111,7 @@ if (!empty($_POST)) {
 <?php require 'include/header.php'; ?>
 
 <article class="col-xs-12 col-sm-12 col-md-6 col-lg-6 carte">
-	
+
 </article>
 
 <article class="formulaire col-xs-12 col-sm-12 col-md-6 col-lg-6" style="padding-top: 80px;">
@@ -135,12 +136,12 @@ if (!empty($_POST)) {
 			<label for="">Description : <span>*</span></label>
 			<textarea name="description" class="form-control" maxlength="500" ></textarea>
 		</div>
-		
+
 		<div class="form-group">
 			<label for="">Photo (taille maximum : xx Mo / png et jpg seulement) : <span>*</span></label>
 			<input type="file" name="picture" class="form-control" required/>
 		</div>
-		
+
 		<div class="form-group">
 			<label for="">Catégorie : <span>*</span></label>
 			<select class="form-control" name="category">
@@ -194,7 +195,7 @@ if (!empty($_POST)) {
 			<label for="">Longitude : </label>
 			<input type="text" name="longitude" class="form-control" id="longitude" />
 		</div>
-		
+
 		<button type="submit" class="btn btn-primary">Poster l'annonce</button>
 	</form>
 </article>
