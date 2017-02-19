@@ -16,7 +16,10 @@
 			<span class="type">Catégorie :</span> <span class="resultat"><?= $data->category; ?></span> | <span class="type">Qualité de l'objet :</span> <span class="resultat"><?= $data->quality; ?></span>
 		</div>
 		<div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-10 col-md-2 col-lg-offset-10 col-lg-2 voir">
-			<button type="submit">Voir l'annonce</button>
+			<form action="" method="POST" accept-charset="utf-8">
+				<input type="number" name="post_id" value="<?= $data->id; ?>" hidden>
+				<button type="submit">Voir l'annonce</button>
+			</form>
 		</div>
 	</div>
 </section>

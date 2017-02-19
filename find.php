@@ -91,7 +91,7 @@ require 'include/db.php';
 
 	</section>
 	<section class="col-xs-12 col-sm-12 col-md-8 col-lg-8 resultat">
-	<?php if(!empty($Search)) { ?>
+	<?php if(isset($Search)) { ?>
 		<?php while ($data = $Search->fetch()) { ?>
 			<section class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 image">

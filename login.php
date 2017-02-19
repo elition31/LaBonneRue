@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!empty($_SESSION['auth'])){
-        $_SESSION['flash']['danger'] = "Vous n'avez pas le droit d'accéder à cette page";
+        $_SESSION['flash']['danger'] = "Vous êtes déjà connecté";
         header('Location: account.php');
         exit();
     }

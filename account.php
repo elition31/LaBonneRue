@@ -19,6 +19,14 @@ logged_only();
 	AND i.user_lock_id IS NULL
 	ORDER BY i.id DESC");
 
+	$Lock_Post = $pdo->query("
+	SELECT i.title, i.description, c.title AS category, i.picture AS picture, q.title AS quality 
+	FROM items i 
+	LEFT JOIN categories c ON i.category_id = c.id 
+	LEFT JOIN qualities q ON i.quality_id = q.id 
+	LEFT JOIN users u ON i.user_id = u.id 
+	WHERE i.user_lock_id = $infos->id
+	ORDER BY i.id DESC");
 
 ?>
 
@@ -88,6 +96,31 @@ logged_only();
 	
 	<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12 infos" id="sous_menu-3" style="display: none;">
 		<h1>Annonces Vérouillées</h1>
+		<?php while ($data = $Lock_Post->fetch()) 
+		{
+		?>
+		<section class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 image">
+				<img src="<?= $data->picture; ?>" alt="Photo de l'objet" class="img-responsive">
+			</div>
+			<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 infos">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 titre_annonce">
+					<span class="titre"><?= $data->title; ?></span>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 description_annonce">
+					<?= $data->description; ?>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 details">
+					<span class="type">Catégorie :</span> <span class="resultat"><?= $data->category; ?></span> | <span class="type">Qualité de l'objet :</span> <span class="resultat"><?= $data->quality; ?></span>
+				</div>
+				<div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-10 col-md-2 col-lg-offset-10 col-lg-2 voir">
+					<button type="submit">Voir l'annonce</button>
+				</div>
+			</div>
+		</section>
+		<?php }
+		$Lock_Post->closeCursor(); // Termine le traitement de la requête
+		?>
 	</article>
 	
 	<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12 infos" id="sous_menu-4" style="display: none;">

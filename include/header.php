@@ -1,5 +1,8 @@
 <?php if(session_status() == PHP_SESSION_NONE){session_start();}
-$infos = $_SESSION['auth'];?>
+if (isset($_SESSION['auth'])) {
+	$infos = $_SESSION['auth'];
+}
+?>
 <!DOCTYPE html>
 <html lang="FR-fr">
 <head>
