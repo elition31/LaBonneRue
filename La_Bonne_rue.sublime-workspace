@@ -1,0 +1,1242 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"item",
+				"item_delete"
+			],
+			[
+				"annonce",
+				"$annonce_id〔variable〕"
+			],
+			[
+				"key",
+				"$keywords〔variable〕"
+			],
+			[
+				"reqet",
+				"$requete〔variable〕"
+			],
+			[
+				"var",
+				"var_dump〔function〕"
+			],
+			[
+				"print",
+				"print_r〔function〕"
+			],
+			[
+				"qu",
+				"qualite"
+			],
+			[
+				"quality",
+				"quality_id"
+			],
+			[
+				"cat",
+				"category_id"
+			],
+			[
+				"padin",
+				"padding-top"
+			],
+			[
+				"geo",
+				"geo2address"
+			],
+			[
+				"upload",
+				"uploadOk"
+			],
+			[
+				"erro",
+				"$errors〔variable〕"
+			],
+			[
+				"que",
+				"querySelectorAll( selectors: DOMString ): NodeList\tElement"
+			],
+			[
+				"se",
+				"select\tTag"
+			],
+			[
+				"ses",
+				"session_start〔function〕"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"for",
+				"foreach\tforeach …"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"email",
+				"email_user"
+			],
+			[
+				"user",
+				"user_name"
+			],
+			[
+				"FILTER_V",
+				"FILTER_VALIDATE_EMAIL〔constant〕"
+			],
+			[
+				"filter",
+				"filter_var〔function〕"
+			],
+			[
+				"preg",
+				"preg_match〔function〕"
+			],
+			[
+				"form",
+				"form-group \tBootstrap 3 Class"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"pi",
+				"picture"
+			],
+			[
+				"obj",
+				"objects"
+			],
+			[
+				"o",
+				"objects"
+			],
+			[
+				"img",
+				"img-responsive \tBootstrap 3 Class"
+			],
+			[
+				"require",
+				"require〔function〕"
+			],
+			[
+				"col-md-of",
+				"col-md-offset-10 \tBootstrap 3 Class"
+			],
+			[
+				"col-sm-of",
+				"col-sm-offset-2 \tBootstrap 3 Class"
+			],
+			[
+				"p",
+				"p\tTag"
+			],
+			[
+				"tex",
+				"text-decoration"
+			],
+			[
+				"partic",
+				"particulièrement"
+			],
+			[
+				"tableau",
+				"tableau_img"
+			],
+			[
+				"display",
+				"display = 'none'\tStyle CSS"
+			],
+			[
+				"querySe",
+				"querySelectorAll( selectors: DOMString ): NodeList\tDocument"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"value",
+				"valueOf(): string\tString"
+			],
+			[
+				"close",
+				"close〔function〕"
+			],
+			[
+				"op",
+				"opacity"
+			],
+			[
+				"ri",
+				"right"
+			],
+			[
+				"mou",
+				"mouseover\t.mouseover()"
+			],
+			[
+				"fer",
+				"fermeture"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"ligh",
+				"lightbox〔function〕"
+			],
+			[
+				"col-lg-of",
+				"col-lg-offset-2 \tBootstrap 3 Class"
+			],
+			[
+				"di",
+				"display〔variable〕"
+			],
+			[
+				"cla",
+				"className"
+			],
+			[
+				"add",
+				"addClass\t.addClass()"
+			],
+			[
+				"get",
+				"getElementById〔function〕"
+			],
+			[
+				"scri",
+				"script\tTag"
+			],
+			[
+				"sty",
+				"style\tTag"
+			],
+			[
+				"light",
+				"light-1"
+			],
+			[
+				"ar",
+				"article\t<article>"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"bor",
+				"border-bottom"
+			],
+			[
+				"sess",
+				"session_destroy〔function〕"
+			],
+			[
+				"border",
+				"border"
+			],
+			[
+				"fonts",
+				"font-size"
+			],
+			[
+				"bo",
+				"border"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"vi",
+				"visible"
+			],
+			[
+				"over",
+				"overflow-y"
+			],
+			[
+				"marg",
+				"margin"
+			],
+			[
+				"list",
+				"list:n\tlist-style-type:none"
+			],
+			[
+				"col-sm-1",
+				"col-sm-12 \tBootstrap 3 Class"
+			],
+			[
+				"col-xs",
+				"col-xs-12 \tBootstrap 3 Class"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"Al",
+				"ALTOSPAM"
+			],
+			[
+				"inner",
+				"innerWidth"
+			],
+			[
+				"rota",
+				"rotateZ()"
+			],
+			[
+				"pa",
+				"padding-top"
+			],
+			[
+				"box",
+				"box-shadow"
+			],
+			[
+				"lef",
+				"left"
+			],
+			[
+				"col-md-o",
+				"col-md-offset-1 \tBootstrap 3 Class"
+			],
+			[
+				"Ins",
+				"Installer"
+			],
+			[
+				"Inst",
+				"Installation"
+			],
+			[
+				"redém",
+				"redémarrer"
+			],
+			[
+				"Choi",
+				"Choisissez"
+			],
+			[
+				"insa",
+				"installer"
+			],
+			[
+				"Var",
+				"VarCheckMinute"
+			],
+			[
+				"PathD",
+				"PathDay1"
+			],
+			[
+				"FileT",
+				"FileTempMonth"
+			],
+			[
+				"FileMonth",
+				"FileMonths"
+			],
+			[
+				"Date",
+				"DateTest"
+			],
+			[
+				"D",
+				"DateJour"
+			],
+			[
+				"Fil",
+				"FileDay14"
+			],
+			[
+				"Un",
+				"UnattendInstallx64"
+			],
+			[
+				"Unattend",
+				"UnattendBootx64"
+			],
+			[
+				"b",
+				"bolder"
+			],
+			[
+				"sc",
+				"scale()"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"spac",
+				"border-spacing"
+			],
+			[
+				"borderr",
+				"border-radius"
+			],
+			[
+				"backc",
+				"background-color"
+			],
+			[
+				"ro",
+				"rotateZ()"
+			],
+			[
+				"border-r",
+				"border-radius"
+			],
+			[
+				"lin",
+				"links\tlink - stylesheet"
+			],
+			[
+				"ab",
+				"absolute"
+			],
+			[
+				"rgb",
+				"rgba()"
+			],
+			[
+				"h",
+				"html\thtml"
+			],
+			[
+				"dat",
+				"dateJour"
+			],
+			[
+				"da",
+				"dateJour"
+			],
+			[
+				"ma",
+				"mainlog"
+			],
+			[
+				"fic",
+				"fichierTemporaire"
+			],
+			[
+				"v",
+				"visible"
+			],
+			[
+				"vis",
+				"visibility"
+			],
+			[
+				"bak",
+				"background-color"
+			],
+			[
+				"im",
+				"img\tTag"
+			],
+			[
+				"la",
+				"label\tTag"
+			],
+			[
+				"label",
+				"label\t<label>"
+			],
+			[
+				"col",
+				"col-md-4 \tBootstrap 3 Class"
+			],
+			[
+				"tr",
+				"transparent"
+			],
+			[
+				"back",
+				"background-attachment"
+			],
+			[
+				"link",
+				"link\tTag"
+			],
+			[
+				"no",
+				"none"
+			],
+			[
+				"col-md",
+				"col-md-6 \tBootstrap 3 Class"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"mai",
+				"main\tTag"
+			],
+			[
+				"header",
+				"header\tTag"
+			],
+			[
+				"c",
+				"content\tAttr"
+			],
+			[
+				"meta",
+				"meta\tTag"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "view_annonce.php",
+			"settings":
+			{
+				"buffer_size": 128,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?php\nsession_start();\nrequire 'include/functions.php';\nrequire 'include/db.php';\n\n\tif (!empty($_POST)) {\n\t\t$errors = array();\n\n\t\tif(!preg_match('/^($|[a-zA-Z0-9_ ]+$)/', $_POST['item_title_search'])){\n\t\t\t$errors['item_title_search'] = \"Vous n'avez pas entrer un titre ou une description valide (Uniquement des lettres, des chiffres et l'underscore).\";\n\t\t}\n\t\tif(!preg_match('/^($|[a-zA-Z0-9_ ]+$)/', $_POST['item_description_search'])){\n\t\t\t$errors['item_description_search'] = \"Vous n'avez pas entrer un titre ou une description valide (Uniquement des lettres, des chiffres et l'underscore).\";\n\t\t}\n\t\tif(empty($_POST['category']) || !preg_match('/^[0-9]+$/', $_POST['category'])){\n\t\t\t$errors['category'] = \"Vous n'avez pas sélectionné de catégorie\";\n\t\t}\n\t\tif(empty($_POST['quality']) || !preg_match('/^[0-9]+$/', $_POST['quality'])){\n\t\t\t$errors['quality'] = \"Vous n'avez pas sélectionné de quality\";\n\t\t}\n\t\tif(empty($errors)){\n\n\t\t\tif(empty($_POST['item_title_search']) && empty($_POST['item_description_search'])){\n\t\t\t\t$keywords = 0;\n\t\t\t}elseif (!empty($_POST['item_title_search']) && empty($_POST['item_description_search'])) {\n\t\t\t\t$keywords = 1;\n\t\t\t}elseif (empty($_POST['item_title_search']) && !empty($_POST['item_description_search'])) {\n\t\t\t\t$keywords = 2;\n\t\t\t}else {\n\t\t\t\t$keywords = 3;\n\t\t\t}\n\n\t\t\t$title = $_POST['item_title_search'];\n\t\t\t$description = $_POST['item_description_search'];\n\t\t\t$category = (int)$_POST['category'];\n\t\t\t$quality = (int)$_POST['quality'];\n\n\t\t\tif ($keywords == 0) {\n\t\t\t\t$Search = $pdo->query(\"\n\t\t\t\tSELECT i.title, i.description, c.title AS category, i.picture AS picture, q.title AS quality, u.user_name AS owner\n\t\t\t\tFROM items i\n\t\t\t\tLEFT JOIN categories c ON i.category_id = c.id\n\t\t\t\tLEFT JOIN qualities q ON i.quality_id = q.id\n\t\t\t\tLEFT JOIN users u ON i.user_id = u.id\n\t\t\t\tWHERE i.category_id = $category\n\t\t\t\tAND i.quality_id = $quality\n\t\t\t\tORDER BY i.id\");\n\t\t\t\tif ($Search->rowCount() > 0) {\n\t\t\t\t\t$_SESSION[\"flash\"][\"success\"] = \"Votre recherche a donné un ou plusieurs résultat(s) !\";\n\t\t\t\t}else {\n\t\t\t\t\t$_SESSION[\"flash\"][\"danger\"] = \"Votre recherche n'a donné aucun résultat\";\n\t\t\t\t}\n\t\t\t}elseif ($keywords == 1) {\n\t\t\t\t$Search = $pdo->query(\"\n\t\t\t\tSELECT i.title, i.description, c.title AS category, i.picture AS picture, q.title AS quality, u.user_name AS owner\n\t\t\t\tFROM items i\n\t\t\t\tLEFT JOIN categories c ON i.category_id = c.id\n\t\t\t\tLEFT JOIN qualities q ON i.quality_id = q.id\n\t\t\t\tLEFT JOIN users u ON i.user_id = u.id\n\t\t\t\tWHERE i.category_id = $category\n\t\t\t\tAND i.quality_id = $quality\n\t\t\t\tAND i.title LIKE '%$title%'\n\t\t\t\tORDER BY i.id\");\n\t\t\t\tif ($Search->rowCount() > 0) {\n\t\t\t\t\t$_SESSION[\"flash\"][\"success\"] = \"Votre recherche a donné un ou plusieurs résultat(s) !\";\n\t\t\t\t}else {\n\t\t\t\t\t$_SESSION[\"flash\"][\"danger\"] = \"Votre recherche n'a donné aucun résultat\";\n\t\t\t\t}\n\t\t\t}elseif ($keywords == 2) {\n\t\t\t\t$Search = $pdo->query(\"\n\t\t\t\tSELECT i.title, i.description, c.title AS category, i.picture AS picture, q.title AS quality, u.user_name AS owner\n\t\t\t\tFROM items i\n\t\t\t\tLEFT JOIN categories c ON i.category_id = c.id\n\t\t\t\tLEFT JOIN qualities q ON i.quality_id = q.id\n\t\t\t\tLEFT JOIN users u ON i.user_id = u.id\n\t\t\t\tWHERE i.category_id = $category\n\t\t\t\tAND i.quality_id = $quality\n\t\t\t\tAND i.description LIKE '%$description%'\n\t\t\t\tORDER BY i.id\");\n\t\t\t\tif ($Search->rowCount() > 0) {\n\t\t\t\t\t$_SESSION[\"flash\"][\"success\"] = \"Votre recherche a donné un ou plusieurs résultat(s) !\";\n\t\t\t\t}else {\n\t\t\t\t\t$_SESSION[\"flash\"][\"danger\"] = \"Votre recherche n'a donné aucun résultat\";\n\t\t\t\t}\n\t\t\t}elseif ($keywords == 3) {\n\t\t\t\t$Search = $pdo->query(\"\n\t\t\t\tSELECT i.title, i.description, c.title AS category, i.picture AS picture, q.title AS quality, u.user_name AS owner\n\t\t\t\tFROM items i\n\t\t\t\tLEFT JOIN categories c ON i.category_id = c.id\n\t\t\t\tLEFT JOIN qualities q ON i.quality_id = q.id\n\t\t\t\tLEFT JOIN users u ON i.user_id = u.id\n\t\t\t\tWHERE i.category_id = $category\n\t\t\t\tAND i.quality_id = $quality\n\t\t\t\tAND i.title LIKE '%$title%'\n\t\t\t\tAND i.description LIKE '%$description%'\n\t\t\t\tORDER BY i.id\");\n\t\t\t\tif ($Search->rowCount() > 0) {\n\t\t\t\t\t$_SESSION[\"flash\"][\"success\"] = \"Votre recherche a donné un ou plusieurs résultat(s) !\";\n\t\t\t\t}else {\n\t\t\t\t\t$_SESSION[\"flash\"][\"danger\"] = \"Votre recherche n'a donné aucun résultat\";\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n?>\n<?php require 'include/header.php'; ?>\n\n\n\n<article class=\"col-xs-12 col-sm-12 col-md-12 col-lg-12 recherche\" style=\"padding-top: 80px;\">\n\t<form action=\"\" method=\"POST\" accept-charset=\"utf-8\">\n\t\t<label for=\"title_search\">Rechercher dans le titre : </label>\n\t\t<input type=\"text\" name=\"item_title_search\" id=\"search\">\n\n\t\t<label for=\"description_search\">Rechercher dans la description : </label>\n\t\t<input type=\"text\" name=\"item_description_search\" id=\"search\">\n\n\t\t<label for=\"categorie\">Catégorie : </label>\n\t\t\t<select class=\"\" name=\"category\" id=\"categorie\">\n\t\t\t\t<option value=\"1\">Electroménager</option>\n\t\t\t\t<option value=\"2\">Vêtements/Textile</option>\n\t\t\t\t<option value=\"3\">Meubles</option>\n\t\t\t\t<option value=\"4\">Hight Tech</option>\n\t\t\t\t<option value=\"5\">Matériaux</option>\n\t\t\t\t<option value=\"6\">Jouets</option>\n\t\t\t\t<option value=\"7\">Décoration</option>\n\t\t\t\t<option value=\"8\">Divers</option>\n\t\t\t\t<option value=\"9\">Litterie</option>\n\t\t\t\t<option value=\"10\">Pièces Automobiles</option>\n\t\t\t\t<option value=\"11\">Equipement Sportif</option>\n\t\t\t\t<option value=\"12\">Autre</option>\n\t\t\t</select>\n\n\t\t\t<label for=\"qualite\">Qualité : </label>\n\t\t\t<select class=\"\" name=\"quality\" id=\"qualite\">\n\t\t\t\t<option value=\"1\">Très Abimé</option>\n\t\t\t\t<option value=\"2\">Abimé</option>\n\t\t\t\t<option value=\"3\">Bon Etat</option>\n\t\t\t\t<option value=\"4\">Très Bon Etat</option>\n\t\t\t\t<option value=\"5\">Neuf</option>\n\t\t\t</select>\n\t\t<button type=\"submit\">Trouver !</button>\n\t</form>\n\n</article>\n\n<article class=\"col-xs-12 col-sm-12 col-md-12 col-lg-12 resultat_recherche\">\n\t<section class=\"col-xs-12 col-sm-12 col-md-4 col-lg-4 carte\">\n\n\t</section>\n\t<section class=\"col-xs-12 col-sm-12 col-md-8 col-lg-8 resultat\">\n\t<?php if(isset($Search)) { ?>\n\t\t<?php while ($data = $Search->fetch()) { ?>\n\t\t\t<section class=\"col-xs-12 col-sm-12 col-md-12 col-lg-12\">\n\t\t\t\t<div class=\"col-xs-12 col-sm-2 col-md-2 col-lg-2 image\">\n\t\t\t\t\t<img src=\"<?= $data->picture; ?>\" alt=\"Photo de l'objet\" class=\"img-responsive\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-xs-12 col-sm-10 col-md-10 col-lg-10 infos\">\n\t\t\t\t\t<div class=\"col-xs-12 col-sm-12 col-md-12 col-lg-12 titre_annonce\">\n\t\t\t\t\t\t<span class=\"titre\"><?= $data->title; ?></span> publié par <span class=\"auteur\"><?= $data->owner; ?></span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-xs-12 col-sm-12 col-md-12 col-lg-12 description_annonce\">\n\t\t\t\t\t\t<?= $data->description; ?>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-xs-12 col-sm-12 col-md-12 col-lg-12 details\">\n\t\t\t\t\t\t<span class=\"type\">Catégorie :</span> <span class=\"resultat\"><?= $data->category; ?></span> | <span class=\"type\">Qualité de l'objet :</span> <span class=\"resultat\"><?= $data->quality; ?></span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-10 col-md-2 col-lg-offset-10 col-lg-2 voir\">\n\t\t\t\t\t\t<button type=\"submit\">Voir l'annonce</button>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</section>\n\t\t\t<?php }\n\t\t\t$Search->closeCursor(); // Termine le traitement de la requête\n\t\t\t?>\n\t\t<?php } ?>\n\t</section>\n</article>\n\n\n\n\n\n<?php include 'include/footer.php'; ?>",
+			"file": "find.php",
+			"file_size": 7275,
+			"file_write_time": 131321437086815475,
+			"settings":
+			{
+				"buffer_size": 7237,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "account.php",
+			"settings":
+			{
+				"buffer_size": 8293,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "confirm.php",
+			"settings":
+			{
+				"buffer_size": 626,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "include/annonce.php",
+			"settings":
+			{
+				"buffer_size": 1293,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.php",
+			"settings":
+			{
+				"buffer_size": 1316,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "add.php",
+			"settings":
+			{
+				"buffer_size": 7491,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "register.php",
+			"settings":
+			{
+				"buffer_size": 4053,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "insta",
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"snippet ht",
+				"Snippet: bs3-html5-template"
+			],
+			[
+				"snipp",
+				"Snippet: html"
+			],
+			[
+				"set syntax js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"set syntax h",
+				"Set Syntax: HTML"
+			],
+			[
+				"snippet",
+				"Snippet: html"
+			],
+			[
+				"set syntax txt",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"css",
+				"Snippet: mdi-content-save-settings"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"php",
+				"Set Syntax: PHP 5"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/Thomas/Desktop/projet wab/UwAmp2/www/La_Bonne_Rue"
+	],
+	"file_history":
+	[
+		"/C/Users/Thomas/Desktop/projet wab/UwAmp2/www/La_Bonne_Rue/include/header.php",
+		"/C/Users/Thomas/Desktop/Preferences.sublime-settings",
+		"/C/Users/Thomas/Desktop/projet wab/UwAmp2/www/La_Bonne_Rue/config.rb",
+		"/H/Serveur/UwAmp2/www/La_Bonne_Rue/assets/js/code.js",
+		"/H/Serveur/UwAmp2/www/La_Bonne_Rue/include/header.php",
+		"/H/Serveur/UwAmp2/www/La_Bonne_Rue/login.php",
+		"/C/Users/Thomas/Desktop/projet wab/UwAmp2/www/La_Bonne_Rue/.editorconfig",
+		"/H/Serveur/UwAmp2/www/V4/fichiers_fonctions.js",
+		"/C/Users/Thomas/Desktop/projet wab/UwAmp2/www/La_Bonne_Rue/.gitattributes",
+		"/F/Scripts/Script_2/test_script_2_v3.sh",
+		"/H/Serveur/UwAmp2/www/La_Bonne_Rue/register.php",
+		"/H/Serveur/UwAmp2/www/La_Bonne_Rue/index.php",
+		"/H/Serveur/UwAmp2/www/La_Bonne_Rue/include/annonce.php",
+		"/H/Serveur/UwAmp2/www/La_Bonne_Rue/find.php",
+		"/H/Serveur/UwAmp2/www/La_Bonne_Rue/include/functions.php",
+		"/H/Serveur/UwAmp2/www/La_Bonne_Rue/include/db.php",
+		"/H/Serveur/UwAmp2/www/La_Bonne_Rue/logout.php",
+		"/H/Serveur/UwAmp2/www/La_Bonne_Rue/add.php",
+		"/H/Serveur/UwAmp2/www/La_Bonne_Rue/account.php",
+		"/F/Scripts/Script_1/test_script_1_v2.sh",
+		"/C/Users/Thomas/Downloads/acces-utilisateurs_2017-02-16-10h51.txt",
+		"/H/Serveur/UwAmp2/bin/apache/conf/httpd_uwamp.conf",
+		"/H/Serveur/UwAmp2/bin/php/php-7.0.3/php_uwamp.ini",
+		"/H/Serveur/UwAmp2/www/La_Bonne_Rue/pdo (1).php",
+		"/C/Users/Thomas/Dropbox/Dossier de l'équipe Ynov_Toulouse/Management/create_account.php",
+		"/C/Users/Thomas/Dropbox/Dossier de l'équipe Ynov_Toulouse/Management/index.php",
+		"/H/Serveur/UwAmp2/www/La_Bonne_Rue/assets/css/global.less",
+		"/F/Sites/Serveur/UwAmp/www/Oktey/assets/css/global.less",
+		"/H/Serveur/UwAmp2/www/La_Bonne_Rue/include/login.php",
+		"/H/Serveur/UwAmp2/www/La_Bonne_Rue/include/footer.php",
+		"/F/Sites/Serveur/UwAmp/www/Oktey/index.php",
+		"/F/Sites/Oktey/assets/js/code.js",
+		"/C/Users/Thomas/Dropbox/Dossier de l'équipe Ynov_Toulouse/Management/requetes.php",
+		"/C/Users/Thomas/Dropbox/Dossier de l'équipe Ynov_Toulouse/Management/mod_mysql.php",
+		"/C/Users/Thomas/Dropbox/Dossier de l'équipe Ynov_Toulouse/Management/connect.php",
+		"/H/Serveur/UwAmp2/www/La_Bonne_Rue/pdo.php",
+		"/H/Serveur/UwAmp2/bin/database/mysql-5.7.11/my_uwamp.ini",
+		"/H/Serveur/UwAmp2/www/Graphikart/Espace Membre/inc/db.php",
+		"/H/Serveur/UwAmp2/www/Graphikart/Espace Membre/inc/header.php",
+		"/H/Serveur/UwAmp2/www/Graphikart/Espace Membre/account.php",
+		"/H/Serveur/UwAmp2/www/Graphikart/Espace Membre/inc/functions.php",
+		"/H/Serveur/UwAmp2/www/Graphikart/Espace Membre/login.php",
+		"/H/Serveur/UwAmp2/www/Graphikart/Espace Membre/inc/footer.php",
+		"/H/Serveur/UwAmp2/www/La_Bonne_Rue/functions.php",
+		"/C/Users/Thomas/Dropbox/Dossier de l'équipe Ynov_Toulouse/Management/login.php",
+		"/C/Users/Thomas/AppData/Local/Temp/Rar$DIa0.473/Tuto.txt",
+		"/C/Users/Thomas/AppData/Local/Temp/Rar$DIa0.636/Tuto.txt",
+		"/C/Users/Thomas/AppData/Local/Temp/Rar$DIa0.090/Tuto.txt",
+		"/C/Users/Thomas/Desktop/Seedbox/Private/pass seedbox.txt",
+		"/F/Sites/Serveur/UwAmp/www/Oktey - avec toutes les images/index.php",
+		"/F/Sites/Serveur/UwAmp/www/Oktey - avec toutes les images/.htaccess",
+		"/F/Sites/Serveur/UwAmp/www/Oktey/assets/js/code.js",
+		"/F/Sites/Serveur/UwAmp/www/Oktey/contact.php",
+		"/F/Sites/Serveur/UwAmp/www/Oktey/.htaccess",
+		"/F/OKTEY/index.php",
+		"/F/OKTEY/assets/js/code.js",
+		"/C/Users/Thomas/Desktop/OKTEY/assets/js/code.js",
+		"/F/Sites/Serveur/UwAmp/www/Oktey/assets/js/code.min.js",
+		"/C/Users/Thomas/Desktop/OKTEY/index.php",
+		"/F/Sites/Serveur/UwAmp/www/oktey2/index.php",
+		"/F/Sites/Serveur/UwAmp/www/oktey2/assets/css/global.less",
+		"/F/Sites/Serveur/UwAmp/www/oktey2/assets/js/code.js",
+		"/F/OKTEY/assets/css/global.less",
+		"/C/Users/Thomas/AppData/Local/Temp/Rar$DIa0.529/slick.js",
+		"/C/Users/Thomas/AppData/Local/Temp/Rar$DIa0.892/owl.animate.js",
+		"/C/Users/Thomas/Desktop/OKTEY/contact.php",
+		"/F/OKTEY/.htaccess",
+		"/F/OKTEY/assets/css/code.css",
+		"/F/OKTEY/assets/js/code.min.js",
+		"/C/Users/Thomas/Dropbox/Dossier de l'équipe Ynov_Toulouse/Management/test/sign-up.php",
+		"/C/Users/Thomas/Dropbox/Dossier de l'équipe Ynov_Toulouse/Management/test/session.php",
+		"/C/Users/Thomas/Dropbox/Dossier de l'équipe Ynov_Toulouse/Management/test/profile.php",
+		"/C/Users/Thomas/Dropbox/Dossier de l'équipe Ynov_Toulouse/Management/test/logout.php",
+		"/C/Users/Thomas/Dropbox/Dossier de l'équipe Ynov_Toulouse/Management/test/index.php",
+		"/C/Users/Thomas/Dropbox/Dossier de l'équipe Ynov_Toulouse/Management/test/home.php",
+		"/C/Users/Thomas/Dropbox/Dossier de l'équipe Ynov_Toulouse/Management/test/dblogin.sql",
+		"/C/Users/Thomas/Dropbox/Dossier de l'équipe Ynov_Toulouse/Management/test/class.user.php",
+		"/C/Users/Thomas/Dropbox/Dossier de l'équipe Ynov_Toulouse/Management/test/dbconfig.php",
+		"/C/Users/Thomas/Desktop/Altospam/Scripts/commandes.sh",
+		"/C/Users/Thomas/Desktop/Altospam/Scripts/Analyses Système/scriptV3.sh",
+		"/C/Users/Thomas/Desktop/Altospam/Scripts/Script_3/Script_Original.sh",
+		"/H/Serveur/UwAmp2/www/V4/work/tic-tac-toe/js/tic-tac-toe.js",
+		"/C/Users/Thomas/Desktop/OKTEY/assets/css/global.less",
+		"/C/Users/Thomas/Desktop/TEST.html",
+		"/F/Sites/Serveur/UwAmp/www/Oktey/assets/js/jquery-3.1.1.js",
+		"/C/Users/Thomas/Desktop/OKTEY/assets/css/style.css",
+		"/F/Sites/Serveur/UwAmp/www/Oktey/assets/css/style480.less",
+		"/F/Sites/Serveur/UwAmp/www/Oktey/assets/css/style849.less",
+		"/F/Sites/Serveur/UwAmp/www/Oktey/assets/css/style1250.less",
+		"/F/Sites/Serveur/UwAmp/www/Oktey/assets/css/style1600.less",
+		"/F/Sites/Serveur/UwAmp/www/Oktey/assets/css/style1600plus.less",
+		"/H/Serveur/UwAmp2/www/V4/work/Infra/assets/js/code2.js",
+		"/H/Serveur/UwAmp2/www/V4/work/Infra/reseau_dfsr.html",
+		"/H/Serveur/UwAmp2/www/V4/index.php",
+		"/H/Serveur/UwAmp2/www/V4/formulaire_contact.php",
+		"/H/Cours/requête management LA BONNE RUE",
+		"/H/Serveur/UwAmp2/phpapps/phpmyadmin/config.inc.php",
+		"/H/Serveur/UwAmp2/bin/apache/conf/httpd.conf",
+		"/F/Sites/Oktey/assets/css/style480.less",
+		"/F/Sites/Oktey/assets/css/style849.less",
+		"/F/Sites/Oktey/assets/css/style1600plus.less",
+		"/F/Sites/Oktey/assets/css/global.less",
+		"/F/Sites/Serveur/UwAmp/www/Oktey/assets/documents/ajouter_actu_altospam.txt",
+		"/F/Sites/Oktey/assets/documents/ajouter_actu_altospam.txt",
+		"/F/Sites/Serveur/UwAmp/www/index.php",
+		"/H/Serveur/UwAmp2/www/index.php",
+		"/F/Sites/style.css",
+		"/H/Serveur/UwAmp2/www/V4/work/blog/TiltHoverEffects-master/index2.html",
+		"/H/Serveur/UwAmp2/www/V4/work/blog/TiltHoverEffects-master/css/component.css",
+		"/H/Serveur/UwAmp2/www/V4/work/blog/TiltHoverEffects-master/css/demo.css",
+		"/F/Sites/Oktey/assets/css/style1250.less",
+		"/F/Sites/Oktey/assets/css/style1600.less",
+		"/F/Sites/Oktey/index.html",
+		"/C/Users/Thomas/Desktop/OKTEY/index.html",
+		"/C/Users/Thomas/Desktop/OKTEY/assets/img/svg/audit.svg",
+		"/C/Users/Thomas/Desktop/OKTEY/assets/img/svg/security.svg",
+		"/C/Users/Thomas/Desktop/OKTEY/assets/img/svg/loupe.svg",
+		"/C/Users/Thomas/Desktop/OKTEY/assets/img/svg/logo-virustotal.svg",
+		"/C/Users/Thomas/Desktop/OKTEY/assets/img/svg/logo-oktey.svg",
+		"/C/Users/Thomas/Desktop/OKTEY/assets/img/svg/installation.svg",
+		"/C/Users/Thomas/Desktop/OKTEY/assets/img/svg/logo-altospam2.svg",
+		"/C/Users/Thomas/Desktop/OKTEY/assets/img/svg/logo-amailor2.svg",
+		"/C/Users/Thomas/Desktop/OKTEY/assets/img/svg/logo-audemail.svg",
+		"/C/Users/Thomas/Desktop/OKTEY/assets/img/svg/logo-bitdefender.svg",
+		"/C/Users/Thomas/Desktop/OKTEY/assets/img/svg/logo-mailout2.svg",
+		"/C/Users/Thomas/Desktop/OKTEY/assets/img/svg/logo-fsecure.svg",
+		"/C/Users/Thomas/Desktop/OKTEY/assets/img/svg/logo-eset3.svg",
+		"/C/Users/Thomas/Desktop/OKTEY/assets/img/svg/logo-drweb.svg"
+	],
+	"find":
+	{
+		"height": 31.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"C:\\Users\\Thomas\\Desktop\\Altospam\\Sites\\style.css",
+			"H:\\Travail\\IOT\\assets\\css\\clouds.css"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"AddDefaultCharset UTF-8",
+			"o",
+			"donnees",
+			"connection",
+			"lightbox",
+			"cur",
+			"cells",
+			"close_light",
+			"cell",
+			"#solutions",
+			"ListenPo",
+			"#actualites > .item",
+			"Auteur",
+			"media-item",
+			"content--related",
+			"tilter--1",
+			"#services > .row > a",
+			":\n",
+			"document.getElementById(\"2-18\").classList.add(\"affiche\");",
+			"document.getElementById(\"2-17\").classList.add(\"affiche\");",
+			"$(\"#client2\").hide(0);",
+			"document.getElementById(\"2-14\").classList.add(\"affiche\");",
+			"<",
+			"#entete",
+			"retourhaut",
+			"retour-haut",
+			"<img ",
+			"        ",
+			"fichierTemporaire.txt",
+			"$fichier",
+			"<",
+			"trait",
+			"fill",
+			"<hr>",
+			"hr",
+			"col-sm-6",
+			"12",
+			"destinataire_emails",
+			"onlineoffline",
+			"onlineoffline tag",
+			"dhcp/WDS_",
+			"DHCP_23",
+			"partie_9/in",
+			".isotop",
+			"fitrows",
+			"for",
+			"Verif",
+			"i ",
+			"NbreIteration",
+			"$NbreIteration",
+			"Iteration",
+			"NbreDisque",
+			"nb",
+			"NDisque",
+			"Iteration",
+			"NbreDisque",
+			"nb",
+			"NbreIteration",
+			"Iteration",
+			"SwapDef",
+			"MemDef",
+			"NbreProcessor",
+			"Usage",
+			"UtilQueue",
+			"UtilDisk",
+			"2016",
+			"2016-",
+			"0 ",
+			"0",
+			"annee",
+			"#t"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"    ",
+			"   ",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "view_annonce.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 128,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								89,
+								89
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "find.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7237,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4228,
+								4228
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 934.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "account.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8293,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7680,
+								7680
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1587.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "confirm.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 626,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "include/annonce.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1293,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1178,
+								1178
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1316,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								423,
+								423
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "add.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7491,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4311,
+								4268
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2277.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "register.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4053,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 207.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "La_Bonne_rue.sublime-project",
+	"replace":
+	{
+		"height": 58.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 206.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

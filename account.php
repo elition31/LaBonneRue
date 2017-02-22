@@ -10,23 +10,50 @@ logged_only();
 	}
 
 	$Owner_Post = $pdo->query("
-	SELECT i.title, i.description, c.title AS category, i.picture AS picture, q.title AS quality 
-	FROM items i 
-	LEFT JOIN categories c ON i.category_id = c.id 
-	LEFT JOIN qualities q ON i.quality_id = q.id 
-	LEFT JOIN users u ON i.user_id = u.id 
+	SELECT i.id, i.title, i.description, i.item_delete, c.title AS category, i.picture AS picture, q.title AS quality
+	FROM items i
+	LEFT JOIN categories c ON i.category_id = c.id
+	LEFT JOIN qualities q ON i.quality_id = q.id
+	LEFT JOIN users u ON i.user_id = u.id
 	WHERE i.user_id = $infos->id
 	AND i.user_lock_id IS NULL
 	ORDER BY i.id DESC");
 
 	$Lock_Post = $pdo->query("
-	SELECT i.title, i.description, c.title AS category, i.picture AS picture, q.title AS quality 
-	FROM items i 
-	LEFT JOIN categories c ON i.category_id = c.id 
-	LEFT JOIN qualities q ON i.quality_id = q.id 
-	LEFT JOIN users u ON i.user_id = u.id 
+	SELECT i.title, i.description, i.metro, i.bus, i.tram, i.address, c.title AS category, i.picture AS picture, q.title AS quality
+	FROM items i
+	LEFT JOIN categories c ON i.category_id = c.id
+	LEFT JOIN qualities q ON i.quality_id = q.id
+	LEFT JOIN users u ON i.user_id = u.id
 	WHERE i.user_lock_id = $infos->id
 	ORDER BY i.id DESC");
+
+	if (isset($_POST['show'])) {
+		if (!empty($_POST) && isset($_SESSION['auth'])) {
+			$annonce_id = $_POST['post_id'];
+			$CheckLock = $pdo->query("SELECT i.user_lock_id FROM items i LEFT JOIN users u ON i.user_id = u.id WHERE i.id = $annonce_id");
+			if ($CheckLock == NULL || !empty($CheckLock)) {
+				$_SESSION['annonce'] = $_POST['post_id'];
+				$_SESSION['flash']['success'] = "Vous avez été redirigé sur l'annonce. Vous pouvez la vérouiller pour afficher l'adresse.";
+				header("Location: view_annonce.php");
+				exit();
+			}else{
+				$_SESSION['flash']['danger'] = "Cette annonce a été vérrouillée par quelqu'un avant vous. Nous sommes désolé.";
+				header("Location: index.php");
+			}
+		}
+	}elseif (isset($_POST['delete'])) {
+		$annonce_id = $_POST['post_id'];
+		$DeleteAnnonce = $pdo->query("UPDATE items SET item_delete = 1 WHERE id = $annonce_id");
+		$CheckAnnonce = $pdo->query("SELECT item_delete FROM items WHERE id = $annonce_id");
+		$data = $CheckAnnonce->fetch();
+		if ($data->item_delete == 1) {
+			$_SESSION['flash']['success'] = "L'annonce n'est plus disponible sur le site";
+		}else {
+			$_SESSION['flash']['danger'] = "L'annonce n'a pas pu être supprimée. Contactez l'administrateur du site.";
+		}
+	}
+
 
 ?>
 
@@ -64,10 +91,10 @@ logged_only();
 			<button type="submit" class="btn btn-primary">Envoyer</button>
 		</form>
 	</article>
-	
+
 	<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12 annonce_index" id="sous_menu-2" style="display: block;">
 		<h1>Mes Annonces</h1>
-		<?php while ($data = $Owner_Post->fetch()) 
+		<?php while ($data = $Owner_Post->fetch())
 		{
 		?>
 		<section class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -84,8 +111,23 @@ logged_only();
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 details">
 					<span class="type">Catégorie :</span> <span class="resultat"><?= $data->category; ?></span> | <span class="type">Qualité de l'objet :</span> <span class="resultat"><?= $data->quality; ?></span>
 				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 details">
+					<span class="type">Annonce Disponible :</span> <span class="resultat">
+					<?php if ($data->item_delete == 1) {
+						echo "non";
+						}else {
+							echo "oui";
+						}
+					 ?>
+
+					</span>
+				</div>
 				<div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-10 col-md-2 col-lg-offset-10 col-lg-2 voir">
-					<button type="submit">Voir l'annonce</button>
+					<form action="" method="POST" accept-charset="utf-8">
+						<input type="number" name="post_id" value="<?= $data->id; ?>" hidden>
+						<button type="submit" name="show">Voir l'annonce</button>
+						<button type="submit" name="delete">Supprimer l'annonce</button>
+					</form>
 				</div>
 			</div>
 		</section>
@@ -93,10 +135,10 @@ logged_only();
 		$Owner_Post->closeCursor(); // Termine le traitement de la requête
 		?>
 	</article>
-	
+
 	<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12 infos" id="sous_menu-3" style="display: none;">
 		<h1>Annonces Vérouillées</h1>
-		<?php while ($data = $Lock_Post->fetch()) 
+		<?php while ($data = $Lock_Post->fetch())
 		{
 		?>
 		<section class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -112,6 +154,47 @@ logged_only();
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 details">
 					<span class="type">Catégorie :</span> <span class="resultat"><?= $data->category; ?></span> | <span class="type">Qualité de l'objet :</span> <span class="resultat"><?= $data->quality; ?></span>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 details">
+					<span class="type">Adresse :</span> <span class="resultat"><?= $data->address; ?></span>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 details">
+					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+						<span class="type">Métro :</span>
+						<span class="resultat">
+							<?php
+								if (empty($data->metro)) {
+									echo "Non renseigné";
+								}else {
+									echo $data->metro;
+								}
+							?>
+						</span>
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+						<span class="type">Bus :</span>
+						<span class="resultat">
+							<?php
+								if (empty($data->bus)) {
+									echo "Non renseigné";
+								}else {
+									echo $data->bus;
+								}
+							?>
+						</span>
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+						<span class="type">Tramway :</span>
+						<span class="resultat">
+							<?php
+								if (empty($data->tram)) {
+									echo "Non renseigné";
+								}else {
+									echo $data->tram;
+								}
+							?>
+						</span>
+					</div>
 				</div>
 				<div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-10 col-md-2 col-lg-offset-10 col-lg-2 voir">
 					<button type="submit">Voir l'annonce</button>
@@ -122,7 +205,7 @@ logged_only();
 		$Lock_Post->closeCursor(); // Termine le traitement de la requête
 		?>
 	</article>
-	
+
 	<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12 infos" id="sous_menu-4" style="display: none;">
 		<h1>Mes Alertes</h1>
 	</article>

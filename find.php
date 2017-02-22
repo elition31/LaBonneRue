@@ -20,13 +20,22 @@ require 'include/db.php';
 		}
 		if(empty($errors)){
 
-			if(empty($_POST['item_title_search'])){$keywords = 0;}else {$keywords = 1;}
+			if(empty($_POST['item_title_search']) && empty($_POST['item_description_search'])){
+				$keywords = 0;
+			}elseif (!empty($_POST['item_title_search']) && empty($_POST['item_description_search'])) {
+				$keywords = 1;
+			}elseif (empty($_POST['item_title_search']) && !empty($_POST['item_description_search'])) {
+				$keywords = 2;
+			}else {
+				$keywords = 3;
+			}
 
 			$title = $_POST['item_title_search'];
 			$description = $_POST['item_description_search'];
 			$category = (int)$_POST['category'];
 			$quality = (int)$_POST['quality'];
 
+			if ($keywords == 0) {
 				$Search = $pdo->query("
 				SELECT i.title, i.description, c.title AS category, i.picture AS picture, q.title AS quality, u.user_name AS owner
 				FROM items i
@@ -37,10 +46,61 @@ require 'include/db.php';
 				AND i.quality_id = $quality
 				ORDER BY i.id");
 				if ($Search->rowCount() > 0) {
-					$_SESSION["flash"]["success"] = "Votre recherche a donné un ou plusieurs résultat !";
-				}else{
+					$_SESSION["flash"]["success"] = "Votre recherche a donné un ou plusieurs résultat(s) !";
+				}else {
 					$_SESSION["flash"]["danger"] = "Votre recherche n'a donné aucun résultat";
 				}
+			}elseif ($keywords == 1) {
+				$Search = $pdo->query("
+				SELECT i.title, i.description, c.title AS category, i.picture AS picture, q.title AS quality, u.user_name AS owner
+				FROM items i
+				LEFT JOIN categories c ON i.category_id = c.id
+				LEFT JOIN qualities q ON i.quality_id = q.id
+				LEFT JOIN users u ON i.user_id = u.id
+				WHERE i.category_id = $category
+				AND i.quality_id = $quality
+				AND i.title LIKE '%$title%'
+				ORDER BY i.id");
+				if ($Search->rowCount() > 0) {
+					$_SESSION["flash"]["success"] = "Votre recherche a donné un ou plusieurs résultat(s) !";
+				}else {
+					$_SESSION["flash"]["danger"] = "Votre recherche n'a donné aucun résultat";
+				}
+			}elseif ($keywords == 2) {
+				$Search = $pdo->query("
+				SELECT i.title, i.description, c.title AS category, i.picture AS picture, q.title AS quality, u.user_name AS owner
+				FROM items i
+				LEFT JOIN categories c ON i.category_id = c.id
+				LEFT JOIN qualities q ON i.quality_id = q.id
+				LEFT JOIN users u ON i.user_id = u.id
+				WHERE i.category_id = $category
+				AND i.quality_id = $quality
+				AND i.description LIKE '%$description%'
+				ORDER BY i.id");
+				if ($Search->rowCount() > 0) {
+					$_SESSION["flash"]["success"] = "Votre recherche a donné un ou plusieurs résultat(s) !";
+				}else {
+					$_SESSION["flash"]["danger"] = "Votre recherche n'a donné aucun résultat";
+				}
+			}elseif ($keywords == 3) {
+				$Search = $pdo->query("
+				SELECT i.title, i.description, c.title AS category, i.picture AS picture, q.title AS quality, u.user_name AS owner
+				FROM items i
+				LEFT JOIN categories c ON i.category_id = c.id
+				LEFT JOIN qualities q ON i.quality_id = q.id
+				LEFT JOIN users u ON i.user_id = u.id
+				WHERE i.category_id = $category
+				AND i.quality_id = $quality
+				AND i.title LIKE '%$title%'
+				AND i.description LIKE '%$description%'
+				ORDER BY i.id");
+				if ($Search->rowCount() > 0) {
+					$_SESSION["flash"]["success"] = "Votre recherche a donné un ou plusieurs résultat(s) !";
+				}else {
+					$_SESSION["flash"]["danger"] = "Votre recherche n'a donné aucun résultat";
+				}
+			}
+
 
 		}
 	}
