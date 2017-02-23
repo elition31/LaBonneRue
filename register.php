@@ -3,7 +3,9 @@ session_start();
 require_once 'include/db.php';
 require_once 'include/functions.php';
 
+// CONDITION === Si clique sur S'inscrire Alors on rentre dans la condition
 if (!empty($_POST)) {
+	// On créé un tableau d'erreurs.
 	$errors = array();
 
 	if(empty($_POST['user_name']) || !preg_match('/^[a-zA-Z0-9_]+$/', $_POST['user_name'])){
@@ -91,7 +93,7 @@ if (!empty($_POST)) {
 			<label for="">Confirmez le mot de passe : <span>*</span></label>
 			<input type="password" name="password_confirm" value="" class="form-control"  required/>
 		</div>
-		<button type="submit" class="btn btn-primary">Envoyer</button>
+		<button type="submit" class="btn btn-primary">S'inscrire</button>
 	</form>
 </article>
 <article class="creation_compte">
