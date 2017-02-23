@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"Che",
+				"$CheckLock〔variable〕"
+			],
+			[
+				"Ch",
+				"$CheckLock〔variable〕"
+			],
+			[
 				"item",
 				"item_delete"
 			],
@@ -506,14 +514,6 @@
 			[
 				"header",
 				"header\tTag"
-			],
-			[
-				"c",
-				"content\tAttr"
-			],
-			[
-				"meta",
-				"meta\tTag"
 			]
 		]
 	},
@@ -529,13 +529,10 @@
 			}
 		},
 		{
-			"contents": "<?php\nsession_start();\nrequire 'include/functions.php';\nrequire 'include/db.php';\n\n\tif (!empty($_POST)) {\n\t\t$errors = array();\n\n\t\tif(!preg_match('/^($|[a-zA-Z0-9_ ]+$)/', $_POST['item_title_search'])){\n\t\t\t$errors['item_title_search'] = \"Vous n'avez pas entrer un titre ou une description valide (Uniquement des lettres, des chiffres et l'underscore).\";\n\t\t}\n\t\tif(!preg_match('/^($|[a-zA-Z0-9_ ]+$)/', $_POST['item_description_search'])){\n\t\t\t$errors['item_description_search'] = \"Vous n'avez pas entrer un titre ou une description valide (Uniquement des lettres, des chiffres et l'underscore).\";\n\t\t}\n\t\tif(empty($_POST['category']) || !preg_match('/^[0-9]+$/', $_POST['category'])){\n\t\t\t$errors['category'] = \"Vous n'avez pas sélectionné de catégorie\";\n\t\t}\n\t\tif(empty($_POST['quality']) || !preg_match('/^[0-9]+$/', $_POST['quality'])){\n\t\t\t$errors['quality'] = \"Vous n'avez pas sélectionné de quality\";\n\t\t}\n\t\tif(empty($errors)){\n\n\t\t\tif(empty($_POST['item_title_search']) && empty($_POST['item_description_search'])){\n\t\t\t\t$keywords = 0;\n\t\t\t}elseif (!empty($_POST['item_title_search']) && empty($_POST['item_description_search'])) {\n\t\t\t\t$keywords = 1;\n\t\t\t}elseif (empty($_POST['item_title_search']) && !empty($_POST['item_description_search'])) {\n\t\t\t\t$keywords = 2;\n\t\t\t}else {\n\t\t\t\t$keywords = 3;\n\t\t\t}\n\n\t\t\t$title = $_POST['item_title_search'];\n\t\t\t$description = $_POST['item_description_search'];\n\t\t\t$category = (int)$_POST['category'];\n\t\t\t$quality = (int)$_POST['quality'];\n\n\t\t\tif ($keywords == 0) {\n\t\t\t\t$Search = $pdo->query(\"\n\t\t\t\tSELECT i.title, i.description, c.title AS category, i.picture AS picture, q.title AS quality, u.user_name AS owner\n\t\t\t\tFROM items i\n\t\t\t\tLEFT JOIN categories c ON i.category_id = c.id\n\t\t\t\tLEFT JOIN qualities q ON i.quality_id = q.id\n\t\t\t\tLEFT JOIN users u ON i.user_id = u.id\n\t\t\t\tWHERE i.category_id = $category\n\t\t\t\tAND i.quality_id = $quality\n\t\t\t\tORDER BY i.id\");\n\t\t\t\tif ($Search->rowCount() > 0) {\n\t\t\t\t\t$_SESSION[\"flash\"][\"success\"] = \"Votre recherche a donné un ou plusieurs résultat(s) !\";\n\t\t\t\t}else {\n\t\t\t\t\t$_SESSION[\"flash\"][\"danger\"] = \"Votre recherche n'a donné aucun résultat\";\n\t\t\t\t}\n\t\t\t}elseif ($keywords == 1) {\n\t\t\t\t$Search = $pdo->query(\"\n\t\t\t\tSELECT i.title, i.description, c.title AS category, i.picture AS picture, q.title AS quality, u.user_name AS owner\n\t\t\t\tFROM items i\n\t\t\t\tLEFT JOIN categories c ON i.category_id = c.id\n\t\t\t\tLEFT JOIN qualities q ON i.quality_id = q.id\n\t\t\t\tLEFT JOIN users u ON i.user_id = u.id\n\t\t\t\tWHERE i.category_id = $category\n\t\t\t\tAND i.quality_id = $quality\n\t\t\t\tAND i.title LIKE '%$title%'\n\t\t\t\tORDER BY i.id\");\n\t\t\t\tif ($Search->rowCount() > 0) {\n\t\t\t\t\t$_SESSION[\"flash\"][\"success\"] = \"Votre recherche a donné un ou plusieurs résultat(s) !\";\n\t\t\t\t}else {\n\t\t\t\t\t$_SESSION[\"flash\"][\"danger\"] = \"Votre recherche n'a donné aucun résultat\";\n\t\t\t\t}\n\t\t\t}elseif ($keywords == 2) {\n\t\t\t\t$Search = $pdo->query(\"\n\t\t\t\tSELECT i.title, i.description, c.title AS category, i.picture AS picture, q.title AS quality, u.user_name AS owner\n\t\t\t\tFROM items i\n\t\t\t\tLEFT JOIN categories c ON i.category_id = c.id\n\t\t\t\tLEFT JOIN qualities q ON i.quality_id = q.id\n\t\t\t\tLEFT JOIN users u ON i.user_id = u.id\n\t\t\t\tWHERE i.category_id = $category\n\t\t\t\tAND i.quality_id = $quality\n\t\t\t\tAND i.description LIKE '%$description%'\n\t\t\t\tORDER BY i.id\");\n\t\t\t\tif ($Search->rowCount() > 0) {\n\t\t\t\t\t$_SESSION[\"flash\"][\"success\"] = \"Votre recherche a donné un ou plusieurs résultat(s) !\";\n\t\t\t\t}else {\n\t\t\t\t\t$_SESSION[\"flash\"][\"danger\"] = \"Votre recherche n'a donné aucun résultat\";\n\t\t\t\t}\n\t\t\t}elseif ($keywords == 3) {\n\t\t\t\t$Search = $pdo->query(\"\n\t\t\t\tSELECT i.title, i.description, c.title AS category, i.picture AS picture, q.title AS quality, u.user_name AS owner\n\t\t\t\tFROM items i\n\t\t\t\tLEFT JOIN categories c ON i.category_id = c.id\n\t\t\t\tLEFT JOIN qualities q ON i.quality_id = q.id\n\t\t\t\tLEFT JOIN users u ON i.user_id = u.id\n\t\t\t\tWHERE i.category_id = $category\n\t\t\t\tAND i.quality_id = $quality\n\t\t\t\tAND i.title LIKE '%$title%'\n\t\t\t\tAND i.description LIKE '%$description%'\n\t\t\t\tORDER BY i.id\");\n\t\t\t\tif ($Search->rowCount() > 0) {\n\t\t\t\t\t$_SESSION[\"flash\"][\"success\"] = \"Votre recherche a donné un ou plusieurs résultat(s) !\";\n\t\t\t\t}else {\n\t\t\t\t\t$_SESSION[\"flash\"][\"danger\"] = \"Votre recherche n'a donné aucun résultat\";\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n?>\n<?php require 'include/header.php'; ?>\n\n\n\n<article class=\"col-xs-12 col-sm-12 col-md-12 col-lg-12 recherche\" style=\"padding-top: 80px;\">\n\t<form action=\"\" method=\"POST\" accept-charset=\"utf-8\">\n\t\t<label for=\"title_search\">Rechercher dans le titre : </label>\n\t\t<input type=\"text\" name=\"item_title_search\" id=\"search\">\n\n\t\t<label for=\"description_search\">Rechercher dans la description : </label>\n\t\t<input type=\"text\" name=\"item_description_search\" id=\"search\">\n\n\t\t<label for=\"categorie\">Catégorie : </label>\n\t\t\t<select class=\"\" name=\"category\" id=\"categorie\">\n\t\t\t\t<option value=\"1\">Electroménager</option>\n\t\t\t\t<option value=\"2\">Vêtements/Textile</option>\n\t\t\t\t<option value=\"3\">Meubles</option>\n\t\t\t\t<option value=\"4\">Hight Tech</option>\n\t\t\t\t<option value=\"5\">Matériaux</option>\n\t\t\t\t<option value=\"6\">Jouets</option>\n\t\t\t\t<option value=\"7\">Décoration</option>\n\t\t\t\t<option value=\"8\">Divers</option>\n\t\t\t\t<option value=\"9\">Litterie</option>\n\t\t\t\t<option value=\"10\">Pièces Automobiles</option>\n\t\t\t\t<option value=\"11\">Equipement Sportif</option>\n\t\t\t\t<option value=\"12\">Autre</option>\n\t\t\t</select>\n\n\t\t\t<label for=\"qualite\">Qualité : </label>\n\t\t\t<select class=\"\" name=\"quality\" id=\"qualite\">\n\t\t\t\t<option value=\"1\">Très Abimé</option>\n\t\t\t\t<option value=\"2\">Abimé</option>\n\t\t\t\t<option value=\"3\">Bon Etat</option>\n\t\t\t\t<option value=\"4\">Très Bon Etat</option>\n\t\t\t\t<option value=\"5\">Neuf</option>\n\t\t\t</select>\n\t\t<button type=\"submit\">Trouver !</button>\n\t</form>\n\n</article>\n\n<article class=\"col-xs-12 col-sm-12 col-md-12 col-lg-12 resultat_recherche\">\n\t<section class=\"col-xs-12 col-sm-12 col-md-4 col-lg-4 carte\">\n\n\t</section>\n\t<section class=\"col-xs-12 col-sm-12 col-md-8 col-lg-8 resultat\">\n\t<?php if(isset($Search)) { ?>\n\t\t<?php while ($data = $Search->fetch()) { ?>\n\t\t\t<section class=\"col-xs-12 col-sm-12 col-md-12 col-lg-12\">\n\t\t\t\t<div class=\"col-xs-12 col-sm-2 col-md-2 col-lg-2 image\">\n\t\t\t\t\t<img src=\"<?= $data->picture; ?>\" alt=\"Photo de l'objet\" class=\"img-responsive\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-xs-12 col-sm-10 col-md-10 col-lg-10 infos\">\n\t\t\t\t\t<div class=\"col-xs-12 col-sm-12 col-md-12 col-lg-12 titre_annonce\">\n\t\t\t\t\t\t<span class=\"titre\"><?= $data->title; ?></span> publié par <span class=\"auteur\"><?= $data->owner; ?></span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-xs-12 col-sm-12 col-md-12 col-lg-12 description_annonce\">\n\t\t\t\t\t\t<?= $data->description; ?>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-xs-12 col-sm-12 col-md-12 col-lg-12 details\">\n\t\t\t\t\t\t<span class=\"type\">Catégorie :</span> <span class=\"resultat\"><?= $data->category; ?></span> | <span class=\"type\">Qualité de l'objet :</span> <span class=\"resultat\"><?= $data->quality; ?></span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-10 col-md-2 col-lg-offset-10 col-lg-2 voir\">\n\t\t\t\t\t\t<button type=\"submit\">Voir l'annonce</button>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</section>\n\t\t\t<?php }\n\t\t\t$Search->closeCursor(); // Termine le traitement de la requête\n\t\t\t?>\n\t\t<?php } ?>\n\t</section>\n</article>\n\n\n\n\n\n<?php include 'include/footer.php'; ?>",
 			"file": "find.php",
-			"file_size": 7275,
-			"file_write_time": 131321437086815475,
 			"settings":
 			{
-				"buffer_size": 7237,
+				"buffer_size": 7282,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -544,24 +541,16 @@
 			"file": "account.php",
 			"settings":
 			{
-				"buffer_size": 8293,
+				"buffer_size": 8966,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "confirm.php",
-			"settings":
-			{
-				"buffer_size": 626,
-				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "include/annonce.php",
 			"settings":
 			{
-				"buffer_size": 1293,
+				"buffer_size": 1329,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -570,7 +559,7 @@
 			"file": "index.php",
 			"settings":
 			{
-				"buffer_size": 1316,
+				"buffer_size": 1711,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -675,10 +664,12 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/Thomas/Desktop/projet wab/UwAmp2/www/La_Bonne_Rue"
+		"/C/Users/Thomas/Desktop/projet wab/UwAmp2/www/La_Bonne_Rue",
+		"/C/Users/Thomas/Desktop/projet wab/UwAmp2/www/La_Bonne_Rue/include"
 	],
 	"file_history":
 	[
+		"/C/Users/Thomas/Desktop/projet wab/UwAmp2/www/La_Bonne_Rue/confirm.php",
 		"/C/Users/Thomas/Desktop/projet wab/UwAmp2/www/La_Bonne_Rue/include/header.php",
 		"/C/Users/Thomas/Desktop/Preferences.sublime-settings",
 		"/C/Users/Thomas/Desktop/projet wab/UwAmp2/www/La_Bonne_Rue/config.rb",
@@ -805,8 +796,7 @@
 		"/C/Users/Thomas/Desktop/OKTEY/assets/img/svg/logo-bitdefender.svg",
 		"/C/Users/Thomas/Desktop/OKTEY/assets/img/svg/logo-mailout2.svg",
 		"/C/Users/Thomas/Desktop/OKTEY/assets/img/svg/logo-fsecure.svg",
-		"/C/Users/Thomas/Desktop/OKTEY/assets/img/svg/logo-eset3.svg",
-		"/C/Users/Thomas/Desktop/OKTEY/assets/img/svg/logo-drweb.svg"
+		"/C/Users/Thomas/Desktop/OKTEY/assets/img/svg/logo-eset3.svg"
 	],
 	"find":
 	{
@@ -917,7 +907,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 5,
 			"sheets":
 			[
 				{
@@ -946,7 +936,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -955,132 +945,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7237,
+						"buffer_size": 7282,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4228,
-								4228
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 934.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "account.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8293,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7680,
-								7680
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1587.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "confirm.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 626,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "include/annonce.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1293,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1178,
-								1178
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1316,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								423,
-								423
+								1340,
+								1340
 							]
 						],
 						"settings":
@@ -1097,7 +970,97 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 2,
+					"file": "account.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8966,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								338,
+								315
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "include/annonce.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1329,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								42,
+								42
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1711,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								155,
+								155
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "add.php",
 					"semi_transient": false,
 					"settings":
@@ -1110,7 +1073,7 @@
 						[
 							[
 								4311,
-								4268
+								4311
 							]
 						],
 						"settings":
@@ -1119,14 +1082,14 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2277.0,
+						"translation.y": 3818.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 6,
 					"file": "register.php",
 					"semi_transient": false,
 					"settings":
@@ -1151,7 +1114,7 @@
 						"translation.y": 207.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]

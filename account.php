@@ -1,6 +1,7 @@
 <?php session_start();
 require 'include/functions.php';
 require 'include/db.php';
+// FONCTION === Si un non utilisateur tente d'accéder à la page account.php, il est redirigé vers login.php
 logged_only();
 	$infos = $_SESSION['auth'];
 	if ($infos->premium == 0) {
@@ -8,7 +9,7 @@ logged_only();
 	}else {
 		$premium = "oui";
 	}
-
+// REQUETE === Récupère les annonces postées de utilisateur
 	$Owner_Post = $pdo->query("
 	SELECT i.id, i.title, i.description, i.item_delete, c.title AS category, i.picture AS picture, q.title AS quality
 	FROM items i
@@ -19,6 +20,7 @@ logged_only();
 	AND i.user_lock_id IS NULL
 	ORDER BY i.id DESC");
 
+// REQUETE === Récupère les annonces lockées par l'utilisateur
 	$Lock_Post = $pdo->query("
 	SELECT i.title, i.description, i.metro, i.bus, i.tram, i.address, c.title AS category, i.picture AS picture, q.title AS quality
 	FROM items i
@@ -28,11 +30,14 @@ logged_only();
 	WHERE i.user_lock_id = $infos->id
 	ORDER BY i.id DESC");
 
-	if (isset($_POST['show'])) {
+	if (isset($_POST['show'])) { // Au clique du bouton "voir l'annonce"
 		if (!empty($_POST) && isset($_SESSION['auth'])) {
-			$annonce_id = $_POST['post_id'];
+			$annonce_id = $_POST['post_id']; // On stocke la valeur de l'input dans une variable
+			// REQUETE === Vérifie avant la redirection vers l'annonce si celle-ci a été vérouillée
 			$CheckLock = $pdo->query("SELECT i.user_lock_id FROM items i LEFT JOIN users u ON i.user_id = u.id WHERE i.id = $annonce_id");
-			if ($CheckLock == NULL || !empty($CheckLock)) {
+			$data_id = $CheckLock->fetch();
+			// CONDITION === Si la requête renvoit NULL, ou rien, ou un id égal à celui du user alors on redirige vers l'annonce, sinon on redirige vers index.php
+			if ($CheckLock == NULL || !empty($CheckLock) || $data_id == $infos->id) {
 				$_SESSION['annonce'] = $_POST['post_id'];
 				$_SESSION['flash']['success'] = "Vous avez été redirigé sur l'annonce. Vous pouvez la vérouiller pour afficher l'adresse.";
 				header("Location: view_annonce.php");
@@ -42,7 +47,7 @@ logged_only();
 				header("Location: index.php");
 			}
 		}
-	}elseif (isset($_POST['delete'])) {
+	}elseif (isset($_POST['delete'])) { // Au clique du bouton "supprimer l'annonce"
 		$annonce_id = $_POST['post_id'];
 		$DeleteAnnonce = $pdo->query("UPDATE items SET item_delete = 1 WHERE id = $annonce_id");
 		$CheckAnnonce = $pdo->query("SELECT item_delete FROM items WHERE id = $annonce_id");

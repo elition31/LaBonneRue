@@ -1,4 +1,5 @@
-<?php if(session_status() == PHP_SESSION_NONE){session_start();}
+<?php if(session_status() == PHP_SESSION_NONE){session_start();} // Si la session n'est pas démarrée alors on la démarre
+// Si la session contient la variable AUTH, on stock dans la variable $infos
 if (isset($_SESSION['auth'])) {
 	$infos = $_SESSION['auth'];
 }
@@ -29,18 +30,18 @@ if (isset($_SESSION['auth'])) {
 		<div id="content-menu">
 			<div class="onglet"><a href="index.php" title="Accueil" class="ancre"><i class="fa fa-home" aria-hidden="true"></i> Accueil</a></div>
 			<div class="onglet"><a href="find.php" title="Trouver" class="ancre"><i class="fa fa-map-marker" aria-hidden="true"></i> Trouver un objet</a></div>
-			<?php if(isset($_SESSION["auth"])): ?>
+			<?php if(isset($_SESSION["auth"])): ?> <!-- SI AUTH existe (donc user connecté) alors on affiche le reste du menu -->
 				<div class="onglet"><a href="add.php" title="Proposer" class="ancre"><i class="fa fa-binoculars" aria-hidden="true"></i> Proposer un objet</a></div>
 				<div class="onglet"><a href="account.php" title="Compte" class="ancre"><i class="fa fa-user" aria-hidden="true"></i> <?= $infos->user_name ?></a></div>
 				<div class="onglet"><a href="premium.php" title="Premium" class="ancre"><i class="fa fa-arrow-up" aria-hidden="true"></i> Premium</a></div>
 				<div class="onglet"><a href="logout.php" title="Deconnexion" class="ancre"><i class="fa fa-sign-out" aria-hidden="true"></i> Se Déconnecter</a></div>
-			<?php else: ?>
+			<?php else: ?><!-- SI AUTH n'existe pas (donc user non connecté) alors on affiche cette partie du menu -->
 				<div class="onglet"><a href="login.php" title="Connexion" class="ancre"><i class="fa fa-sign-in" aria-hidden="true"></i> Se Connecter</a></div>
 			<?php endif; ?>
 		</div>
 	</nav>
 
-	<?php if(isset($_SESSION["flash"])): ?>
+	<?php if(isset($_SESSION["flash"])): ?> <!-- SI la session FLASH existe ALORS on affiche le ou les messages -->
 		<div style="padding-top: 80px;">
 			<?php foreach($_SESSION["flash"] as $type => $message): ?>
 				<div class="alert alert-<?= $type; ?>">

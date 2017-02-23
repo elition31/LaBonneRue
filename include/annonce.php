@@ -1,4 +1,5 @@
-<?php while ($data = $LastPost->fetch()) 
+<?php // BOUCLE === On affiche le resultat
+while ($data = $LastPost->fetch())
 {
 ?>
 <section class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

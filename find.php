@@ -29,7 +29,7 @@ require 'include/db.php';
 			}else {
 				$keywords = 3;
 			}
-
+			// On stocke les input dans des variables.
 			$title = $_POST['item_title_search'];
 			$description = $_POST['item_description_search'];
 			$category = (int)$_POST['category'];
@@ -100,8 +100,6 @@ require 'include/db.php';
 					$_SESSION["flash"]["danger"] = "Votre recherche n'a donné aucun résultat";
 				}
 			}
-
-
 		}
 	}
 ?>
